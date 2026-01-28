@@ -42,4 +42,33 @@ The `oscar.net` domain is structured into Organizational Units (OUs) to separate
 ## ⚙️ Services Implemented
 
 ### 1. Web Server (IIS)
-An internal portal was deployed,
+An internal portal was deployed, accessible via `http://oscar.oscar.net`.
+![IIS Portal](images/iis_portal.png)
+
+### 2. Secure FTP & FSRM
+* **Access Control:** Restricted strictly to the `SG_SecureFTP_Users` group.
+* **FSRM Policies:** Uploading `.exe` files is blocked, and storage quotas are enforced.
+* **Verification:** Unauthorized users (Jose, Daniel) are denied access.
+
+![FTP Access Denied](images/ftp_access_denied.png)
+
+### 3. RADIUS / NPS
+Centralized authentication was configured using NPS. Access tests from OPNsense confirmed success for Admins and failure for standard users.
+![RADIUS Test](images/radius_test.png)
+
+### 4. Group Policy Objects (GPO)
+The following GPOs were applied and verified using `gpresult /r`:
+* **Windows Firewall Logging:** Enables logging on servers for traffic monitoring.
+* **Common Drive Mapping:** Automatically maps shared folders on `appsrv01`.
+
+## 🛡️ Backup Strategy
+Daily scheduled tasks were configured using **Windows Server Backup**:
+* **Primary DC:** System State backup to `DC-BKP`.
+* **appsrv01:** System State + C: Root backup to `DC-BKP`.
+* **Verification:** Backups confirmed as "Successful" on the backup share.
+
+![Backup Verification](images/backup_verify.png)
+![Backup Verification](images/backup_verifyy.png)
+
+---
+*Educational Project - Infrastructure Security*
