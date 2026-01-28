@@ -43,6 +43,7 @@ The `oscar.net` domain is structured into Organizational Units (OUs) to separate
 
 ### 1. Web Server (IIS)
 An internal portal was deployed, accessible via http://oscar.oscar.net.
+
 ![IIS Portal](images/iis_portal.png)
 
 ### 2. Secure FTP & FSRM
