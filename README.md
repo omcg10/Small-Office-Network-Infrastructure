@@ -18,7 +18,7 @@
 * [cite_start]**DHCP Range:** `192.168.1.41 - 192.168.1.245`[cite: 60].
 * [cite_start]**DNS Forwarders:** `1.1.1.1, 8.8.8.8`[cite: 60].
 
-![Logical Network Diagram](images/network_diagram.png)
+![Logical Network Diagram](images/topology.png)
 *(Note: Upload the diagram from section 1 here)*
 
 ## 🔐 Active Directory Design
